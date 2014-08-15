@@ -27,27 +27,27 @@ definition(
 
 preferences {
   section("Change the status of the following Nest...") {
-  	input("nest", "device.Nest", required: true)
+   input("nest", "device.Nest", required: true)
   }
   section("To home with the following mode...") {
-    input("presentMode", "mode", title: "Mode?", required: false)
+   input("presentMode", "mode", title: "Mode?", required: false)
   }
   section("And to away with the following mode...") {
-      input("awayMode", "mode", title: "Mode?", required: false)
+    input("awayMode", "mode", title: "Mode?", required: false)
   }
 }
 
 def installed() {
-	log.debug("Installed with settings: ${settings}")
+  log.debug("Installed with settings: ${settings}")
     
-	initialize()
+  initialize()
 }
 
 def updated() {
-	log.debug("Updated with settings: ${settings}")
-
-	unsubscribe()
-	initialize()
+  log.debug("Updated with settings: ${settings}")
+  
+  unsubscribe()
+  initialize()
 }
 
 def initialize() {
